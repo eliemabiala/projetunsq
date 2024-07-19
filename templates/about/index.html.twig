@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}About{% endblock %}
+
+{% block body %}
+
+{% block header %}
+	{%  include 'header.html.twig' %}
+{% endblock %}
+
+
+	<section class="message-direction">
+
+		<h1>NOTRE ESPACE</h1>
+		<p>Nous sommes présents dans la région de Paris (en France) et à Kinshasa (en Rép. Démocratique du Congo). Nous avons acquis un empan considérable grâce aux compétences et aux performances qu'avons-nous démontrées face à nos clients au fil des années...</p>
+
+		<div class="message-text">
+			<h2>Message de la Direction</h2>
+			<p>Nous accompagnons la société via le numérique et facilitons l'accès à l'emploi pour les chômeurs et les personnes éloignées de la vie professionnelle...</p>
+		</div>
+		<div class="vision-valeurs">
+			<h2>Vision et valeurs</h2>
+			<ul>
+				<li>Bienveillance</li>
+				<li>Respect</li>
+				<li>Responsabilité</li>
+				<li>Assiduité</li>
+				<li>Divertissement</li>
+			</ul>
+		</div>
+	</section>
+	<section class="equipe">
+		<h2>L'équipe</h2>
+		<div class="team-members">
+			<div class="member">
+				<img src="images/image1.jpg" alt="Plamedy BAKU">
+				<p>Plamedy BAKU</p>
+				<p>Président</p>
+			</div>
+			<div class="member">
+				<img src="images/image2.jpg" alt="Olivier SALA">
+				<p>Olivier SALA</p>
+				<p>Directeur Général</p>
+			</div>
+			<div class="member">
+				<img src="images/image3.jpg" alt="Julien KIALA">
+				<p>Julien KIALA</p>
+				<p>DGD, Rlt et Adm</p>
+			</div>
+			<div class="member">
+				<img src="images/image4.jpg" alt="Ephraim KABELUA">
+				<p>Ephraim KABELUA</p>
+				<p>Technique et logistique</p>
+			</div>
+		</div>
+	</section>
+
+
+
+{% block footer %}
+	{% include 'footer.html.twig' %}
+{% endblock %}
+
+{% endblock %}
