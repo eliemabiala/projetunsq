@@ -1,39 +1,35 @@
-{# {% extends 'base.html.twig' %}
+{% extends 'base.html.twig' %}
 
-{% block title %}Hello LoginController!{% endblock %}
-
-{% block importmap%}
-{{ importmap (['app', 'login']) }}
-
+{% block title %}Hello ContactController!
 {% endblock %}
 
 {% block body %}
+	<style>
+		.example-wrapper {
+			margin: 1em auto;
+			max-width: 800px;
+			width: 95%;
+			font: 18px / 1.5 sans-serif;
+		}
+		.example-wrapper code {
+			background: #F5F5F5;
+			padding: 2px 6px;
+		}
+	</style>
 
-    <body class="bg-gray-100 flex items-center justify-center h-screen transition-colors duration-500 {{ app.session.get('isLoggedIn') ? 'bg-green-100' : '' }}">
+	<div class="example-wrapper">
+		<h1>Hello
+			{{ controller_name }}! Endie✅</h1>
 
-	    <!-- Login Form -->
-        <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-sm">
-            <form method="post">
-                <h2 class="mb-6 text-xl font-bold text-center text-gray-700">Login</h2>
-                <div class="mb-4">
-                    <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
-                    <input type="email" id="email" name="_username" value="{{ last_username }}" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                </div>
-                <div class="mb-6">
-                    <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Password</label>
-                    <input type="password" id="password" name="_password" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline">
-                </div>
-                {% if error %}
-                    <p class="text-red-500 text-xs italic">{{ error.messageKey|trans(error.messageData, 'security') }}</p>
-                {% endif %}
-                <div class="flex items-center justify-between">
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
-                        Login
-                    </button>
-                </div>
-            </form>
-        </div>
-    </body>
+		This friendly message is coming from:
+		<ul>
+			<li>Your controller at
+				<code>D:/Code/symfony/unsq/src/Controller/ContactController.php</code>
+			</li>
+			<li>Your template at
+				<code>D:/Code/symfony/unsq/templates/contact/index.html.twig</code>
+			</li>
+		</ul>
+	</div>
+{% endblock %}
 
-
-{% endblock %} #}

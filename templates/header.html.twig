@@ -1,8 +1,8 @@
 <header class="bg-[rgba(20,33,61,1)]">
 	<nav class="flex justify-between items-center w-[92%] mx-auto py-4">
-		
-			<img class="w-16 cursor-pointer" src="{{ asset('img/logo.png') }}" alt="Logo">
-	
+
+		<img class="w-16 cursor-pointer" src="{{ asset('img/logo.png') }}" alt="Logo">
+
 		<div class="nav-links duration-500 md:static absolute md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5">
 			<ul class="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
 				<li>
@@ -14,19 +14,25 @@
 				<li>
 					<a class="text-white hover:text-[#b49047]" href="{{ path('about') }}">À propos</a>
 				</li>
-                
+
 				<li>
 					<a class="text-white hover:text-[#b49047]" href="{{ path('faq') }}">Faq</a>
 				</li>
 				<li>
 					<a class="text-white hover:text-[#b49047]" href="{{ path('contact') }}">Contact</a>
-				</li> 
+				</li>
+
+				<li>
+					<a class="text-white hover:text-[#b49047]" href="{{ path('form') }}">Formulair</a>
+
+				</li>
 
 
 			</ul>
 		</div>
-			<button class="bg-[#d9d9d9] md:font-bold text-black md:text-s px-4 py-2 rounded-full hover:bg-[#87acec]">Se connecter</button>
-			{# <ion-icon onclick="onToggleMenu(this)" name="menu" class="text-3xl cursor-pointer md:hidden" aria-label="Toggle navigation menu"></ion-icon>
-		</div> #}
-	</nav>
-</header>
+
+		<button class="bg-[#d9d9d9] md:font-bold text-black md:text-s px-4 py-2 rounded-full hover:bg-[#87acec]">Se connecter</button>
+
+		{# <ion-icon onclick="onToggleMenu(this)" name="menu" class="text-3xl cursor-pointer md:hidden" aria-label="Toggle navigation menu"></ion-icon> #}
+	</div>
+</nav></header>

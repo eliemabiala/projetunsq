@@ -1,0 +1,232 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello FormController!
+{% endblock %}
+
+
+{% block body %}
+{# 
+
+	<div class="max-w-2xl mx-auto p-6 bg-white shadow-md rounded-lg mt-10">
+<h2 class="text-2xl font-bold mb-6 text-center">Formulaire d'inscription</h2>
+
+		<form>
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+
+				<div class="col-span-2">
+					<h3 class="text-lg font-semibold mb-4">informations de l'utilisateur</h3>
+
+				</div>
+				<div>
+					<label class="block text-sm font-medium text-gray-700" for="email">Email</label>
+					<input class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" type="email" id="email" name="email" required placeholder="user@example.com">
+					<div class="text-red-600 text-sm mt-1" id="email-error">L'adresse e-mail est obligatoire.</div>
+
+				</div>
+				<div class="mt-4">
+					<label for="role-select" class="block text-sm font-medium text-gray-700">Choisissez un rôle :</label>
+					<select id="role-select" name="role" class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+						<option value="">-- Sélectionnez un rôle --</option>
+						<option value="admin">Admin</option>
+						<option value="coach">Coach</option>
+						<option value="user">User</option>
+					</select>
+				</div>
+
+
+				<div>
+					<label class="block text-sm font-medium text-gray-700">Sexe</label>
+					<div class="mt-1 flex">
+						<div class="flex items-center mr-6">
+							<input id="sexe_m" name="sexe" type="radio" value="M" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300" required>
+							<label for="sexe_m" class="ml-3 block text-sm font-medium text-gray-700">M</label>
+						</div>
+						<div class="flex items-center mr-6">
+							<input id="sexe_f" name="sexe" type="radio" value="F" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300">
+							<label for="sexe_f" class="ml-3 block text-sm font-medium text-gray-700">F</label>
+						</div>
+						<div class="flex items-center">
+							<input id="sexe_autres" name="sexe" type="radio" value="Autres" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300">
+							<label for="sexe_autres" class="ml-3 block text-sm font-medium text-gray-700">Autres</label>
+						</div>
+					</div>
+				</div>
+				<div>
+					<label class="block text-sm font-medium text-gray-700" for="teams">Teams</label>
+					<input class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" type="text" id="teams" name="teams" placeholder="Team A, Team B, etc.">
+				</div>
+				<div>
+					<label class="block text-sm font-medium text-gray-700" for="password">Password</label>
+					<input class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" type="password" id="password" name="password" required placeholder="••••••••">
+				</div>
+
+				<div class="col-span-2 mt-6">
+					<h3 class="text-lg font-semibold mb-4">Profile Information</h3>
+				</div>
+				<div>
+					<label class="block text-sm font-medium text-gray-700" for="name">Name</label>
+					<input class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" type="text" id="name" name="name" >
+				</div>
+				<div>
+					<label class="block text-sm font-medium text-gray-700" for="postname">Postname</label>
+					<input class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" type="text" id="postname" >
+				</div>
+				<div>
+					<label class="block text-sm font-medium text-gray-700" for="first_name">prénom</label>
+                    <input class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" type="text" id="postname" >
+				</div>
+
+				<div>
+					<label class="block text-sm font-medium text-gray-700" for="phone">Phone</label>
+					<input class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" type="tel" id="phone" name="phone" placeholder="+243 753720775">
+				</div>
+				<div>
+					<label class="block text-sm font-medium text-gray-700" for="address">Address</label>
+					<input class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" type="text" id="address" name="address">
+				</div>
+				<div>
+					<label class="block text-sm font-medium text-gray-700" for="date_of_birth">Date of Birth</label>
+					<input class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" type="date" id="date_of_birth" name="date_of_birth" max="2024-12-31">
+				</div>
+				<div>
+					<label class="block text-sm font-medium text-gray-700" for="date_creation">Date Creation</label>
+					<input class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" type="date" id="date_creation" name="date_creation" max="2024-12-31">
+				</div>
+				<div>
+					<label class="block text-sm font-medium text-gray-700" for="date_inscrit">Date Inscrit</label>
+					<input class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" type="date" id="date_inscrit" name="date_inscrit" max="2024-12-31">
+				</div>
+
+				<div class="col-span-2 mt-6">
+					<h3 class="text-lg font-semibold mb-4">Passport Information</h3>
+				</div>
+				<div>
+					<label class="block text-sm font-medium text-gray-700" for="number_passport">Number Passport</label>
+					<input class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" type="text" id="number_passport" name="number_passport" placeholder="123456789">
+				</div>
+				<div>
+					<label class="block text-sm font-medium text-gray-700" for="date_expiration">Date Expiration</label>
+					<input class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" type="date" id="date_expiration" name="date_expiration" min="{{ "now"|date("Y-m-d") }}">
+				</div>
+				<div>
+					<label class="block text-sm font-medium text-gray-700" for="nationalité">Nationalité</label>
+					<input class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" type="text" id="nationalité" name="nationalité" ">
+				</div>
+				<div>
+					<label class="block text-sm font-medium text-gray-700" for="profession">Profession</label>
+					<input class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" type="text" id="profession" name="profession" >
+				</div>
+
+
+				<div class="col-span-2 mt-6">
+					<h3 class="text-lg font-semibold mb-4">Demarches Information</h3>
+				</div>
+				<div>
+					<label class="block text-sm font-medium text-gray-700" for="title">Title</label>
+					<input class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" type="text" id="title" name="title" placeholder="Request Title">
+				</div>
+				<div class="col-span-2">
+					<label class="block text-sm font-medium text-gray-700" for="description">Description</label>
+					<textarea class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" id="description" name="description" rows="3" placeholder="Detailed description"></textarea>
+				</div>
+
+
+				<div class="col-span-2 mt-6">
+					<h3 class="text-lg font-semibold mb-4">Documents Information</h3>
+				</div>
+<div>
+	<label class="block text-sm font-medium text-gray-700" for="file_upload">Choisir un fichier</label>
+	<input class="mt-1 block w-full text-sm text-gray-500 border border-gray-300 rounded-md shadow-sm cursor-pointer focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" type="file" id="file_upload" name="file_upload">
+</div>
+
+
+
+				<div>
+					<label class="block text-sm font-medium text-gray-700" for="download_date">Download Date</label>
+					<input class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" type="date" id="download_date" name="download_date" max="{{ "now"|date("Y-m-d") }}">
+				</div>
+
+
+				<div class="col-span-2 mt-6 flex justify-end">
+					<button type="submit" class="bg-indigo-500 text-white px-4 py-2 rounded-md shadow-sm hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500">Ajouter</button>
+
+					<button type="button" class="ml-4 bg-gray-500 text-white px-4 py-2 rounded-md shadow-sm hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500">Annuler</button>
+
+				</div>
+			</div>
+		</form>
+	</div> #}
+<div class="min-h-screen flex items-center justify-center bg-gray-100">
+	<div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+		<form>
+			<div class="mb-4">
+				<label for="name" class="block text-gray-700 font-bold mb-2">Nom</label>
+				<input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="Mabiala" readonly>
+			</div>
+			<div class="mb-4">
+				<label for="postname" class="block text-gray-700 font-bold mb-2">Postnom</label>
+				<input type="text" id="postname" name="postname" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="Emabiala" readonly>
+			</div>
+			<div class="mb-4">
+				<label for="first_name" class="block text-gray-700 font-bold mb-2">Prénom</label>
+				<input type="text" id="first_name" name="first_name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="Elie" readonly>
+			</div>
+			<div class="mb-4">
+				<label for="date_of_birth" class="block text-gray-700 font-bold mb-2">Date de naissance</label>
+				<input type="text" id="date_of_birth" name="date_of_birth" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="30/05/2005" readonly>
+			</div>
+			<div class="mb-4">
+				<label for="sexe" class="block text-gray-700 font-bold mb-2">Sexe</label>
+				<input type="text" id="sexe" name="sexe" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="Masculin" readonly>
+			</div>
+			<div class="mb-4">
+				<label for="phone" class="block text-gray-700 font-bold mb-2">Numéro de téléphone</label>
+				<input type="text" id="phone" name="phone" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="0753720775" readonly>
+			</div>
+			<div class="mb-4">
+				<label for="email" class="block text-gray-700 font-bold mb-2">Adresse électronique</label>
+				<input type="text" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="mabialaelie4@gmail.com" readonly>
+			</div>
+			<div class="mb-4">
+				<label for="teams" class="block text-gray-700 font-bold mb-2">Équipes</label>
+				<input type="text" id="teams" name="teams" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="Equipe 1" readonly>
+			</div>
+			<div class="mb-4">
+				<label for="password" class="block text-gray-700 font-bold mb-2">Mot de passe</label>
+				<input type="password" id="password" name="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="***************" readonly>
+			</div>
+			<div class="mb-4">
+				<label for="number_Passport" class="block text-gray-700 font-bold mb-2">Numéro de passeport</label>
+				<input type="text" id="number_Passport" name="number_Passport" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="P1234567" readonly>
+			</div>
+			<div class="mb-4">
+				<label for="nationalite" class="block text-gray-700 font-bold mb-2">Nationalité</label>
+				<input type="text" id="nationalite" name="nationalite" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="Congolaise" readonly>
+			</div>
+			<div class="mb-4">
+				<label for="profession" class="block text-gray-700 font-bold mb-2">Profession</label>
+				<input type="text" id="profession" name="profession" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="Etudiant" readonly>
+			</div>
+			<div class="mb-4">
+				<label for="adresse" class="block text-gray-700 font-bold mb-2">Adresse domicile</label>
+				<input type="text" id="adresse" name="adresse" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="70 Rue magenta 69100" readonly>
+			</div>
+			<div class="mb-4">
+				<label for="status_demarches" class="block text-gray-700 font-bold mb-2">Statut des démarches</label>
+				<input type="text" id="status_demarches" name="status_demarches" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="En cours" readonly>
+			</div>
+			<div class="flex justify-between">
+				<button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Modifier</button>
+				<button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Enregistrer</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+
+
+
+
+
+{% endblock %}
